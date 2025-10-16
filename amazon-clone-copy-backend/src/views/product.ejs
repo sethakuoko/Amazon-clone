@@ -1,0 +1,17 @@
+<%- include('header', { title: product.title }) %>
+<section>
+  <h1><%= product.title %></h1>
+  <img
+    src="<%= product.image %>"
+    alt="<%= product.title %>"
+    style="max-width: 300px"
+  />
+  <p><%= product.description %></p>
+  <p>Price: <%= (product.price/100).toFixed(2) %></p>
+  <form id="add-to-cart" data-product-id="<%= product._id %>">
+    <input type="number" name="qty" value="1" min="1" />
+    <button type="submit">Add to cart</button>
+  </form>
+</section>
+
+<%- include('footer') %>

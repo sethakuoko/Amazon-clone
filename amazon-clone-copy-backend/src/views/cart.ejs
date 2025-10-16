@@ -1,0 +1,23 @@
+<%- include('header', { title: 'Cart' }) %>
+<section>
+  <h1>Your Cart</h1>
+  <div id="cart-items">
+    <% if (cart && cart.items && cart.items.length) { %>
+    <ul>
+      <% cart.items.forEach(function(i){ %>
+      <li>
+        <%= i.title %> - qty: <%= i.qty %> - price: <%= (i.price/100).toFixed(2)
+        %>
+      </li>
+      <% }) %>
+    </ul>
+    <form id="checkout-form">
+      <button type="submit">Checkout</button>
+    </form>
+    <% } else { %>
+    <p>Your cart is empty</p>
+    <% } %>
+  </div>
+</section>
+
+<%- include('footer') %>

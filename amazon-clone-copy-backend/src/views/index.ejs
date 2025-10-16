@@ -1,0 +1,31 @@
+<%- include('header', { title: 'Home' }) %>
+
+<section class="hero-section">
+  <div class="hero-msg">
+    <p>Dynamic Amazon clone homepage</p>
+  </div>
+</section>
+
+<%- include('footer') %>
+
+<section class="shop-section">
+  <% if (products && products.length) { %> <% products.forEach(function(p){ %>
+  <div class="box">
+    <div class="box-content">
+      <h2><%= p.title %></h2>
+      <div
+        class="box-img"
+        style="background-image: url('<%= p.image %>')"
+      ></div>
+      <p>Price: <%= (p.price/100).toFixed(2) %></p>
+      <p><a href="/product/<%= p._id %>">See more</a></p>
+      <form class="add-to-cart-form" data-product-id="<%= p._id %>">
+        <input type="number" name="qty" value="1" min="1" />
+        <button type="submit">Add to cart</button>
+      </form>
+    </div>
+  </div>
+  <% }) %> <% } else { %>
+  <p>No products found</p>
+  <% } %>
+</section>
