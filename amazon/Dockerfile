@@ -13,7 +13,7 @@ COPY src ./src
 
 # Copy frontend into the image if present in repo root
 # If you keep frontend next to backend in the repo, Docker context should include it
-COPY ../Amazon-clone\ -\ Copy ./src/frontend/
+COPY ./frontend ./src/frontend/
 
 # Expose port
 EXPOSE 4000

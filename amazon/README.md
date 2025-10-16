@@ -37,10 +37,10 @@ The server will run on `http://localhost:4000` by default.
 
 This backend can serve the existing static frontend copy so product images and CSS are available under `/static`.
 
-Set `FRONTEND_PATH` in your `.env` to point to the parent folder that contains the `Amazon-clone - Copy` folder (default assumes the backend folder lives next to the frontend copy). Example if backend and frontend live together under `Clones`:
+Set `FRONTEND_PATH` in your `.env` to point to the frontend folder (default assumes the backend folder contains a `frontend` folder). Example if backend and frontend live together under `Clones`:
 
 ```
-FRONTEND_PATH=..
+FRONTEND_PATH=../frontend
 ```
 
 Then visit `http://localhost:4000/static/index.html` to open the frontend served by the backend.
@@ -65,4 +65,4 @@ Notes for Google Compute (GCE) or other cloud VMs:
 
 ## Static frontend handling in Docker
 
-The Dockerfile copies a frontend folder located at `../Amazon-clone - Copy` into the image at `src/frontend`. If you prefer to package the frontend differently, set the `FRONTEND_PATH` environment variable to point to the frontend folder inside the container or on the host.
+The Dockerfile copies a frontend folder located at `../frontend` into the image at `src/frontend`. If you prefer to package the frontend differently, set the `FRONTEND_PATH` environment variable to point to the frontend folder inside the container or on the host.

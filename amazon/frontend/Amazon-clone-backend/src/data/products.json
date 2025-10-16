@@ -1,0 +1,29 @@
+[
+  {
+    "id": "p-box1",
+    "title": "Health & Personal Care",
+    "price": 0,
+    "category": "health",
+    "image": "/images/box2_image.jpg",
+    "rating": 4.6,
+    "stock": 999
+  },
+  {
+    "id": "p-box2",
+    "title": "Electronics",
+    "price": 0,
+    "category": "electronics",
+    "image": "/images/box4_image.jpg",
+    "rating": 4.4,
+    "stock": 999
+  },
+  {
+    "id": "p-box3",
+    "title": "Home & Kitchen",
+    "price": 0,
+    "category": "home",
+    "image": "/images/box1_image.jpg",
+    "rating": 4.5,
+    "stock": 999
+  }
+]
