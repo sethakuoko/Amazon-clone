@@ -21,4 +21,4 @@ EXPOSE 4000
 # Environment: production
 ENV NODE_ENV=production
 
-CMD ["node", "src/app.js"]
+CMD ["node", "src/start.js"]

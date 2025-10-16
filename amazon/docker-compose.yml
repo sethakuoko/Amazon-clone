@@ -10,10 +10,17 @@ services:
       - FRONTEND_PATH=/usr/src/app/src/frontend
     depends_on:
       - mongo
+    restart: always
+    command: ["node", "src/start.js"]
   mongo:
     image: mongo:6.0
     restart: always
     volumes:
       - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", 'mongo --eval "db.adminCommand(''ping'')" || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 5
 volumes:
   mongo-data:
